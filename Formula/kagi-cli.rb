@@ -1,27 +1,27 @@
 class KagiCli < Formula
   desc "Kagi CLI — secrets management for Sensey"
   homepage "https://github.com/senseylabs/village"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://api.github.com/repos/senseylabs/village/releases/assets/388968197",
+      url "https://api.github.com/repos/senseylabs/village/releases/assets/388979840",
           headers: ["Accept: application/octet-stream", "Authorization: token #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"]
-      sha256 "de091167e765607e8599fad0f778b1e72ab6ecd45470c4f8afab4da20cbff843"
+      sha256 "b3dbf9ce5b54b1f2897af0ed1bc3a3a5deec0a9643008326c7806177f05f489b"
     end
     on_intel do
-      url "https://api.github.com/repos/senseylabs/village/releases/assets/388968196",
+      url "https://api.github.com/repos/senseylabs/village/releases/assets/388979839",
           headers: ["Accept: application/octet-stream", "Authorization: token #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"]
-      sha256 "573b3f391975ce8f5f3a7b4805d6e9f99af0961e17ebb2adf631e6c9f7bbdb85"
+      sha256 "8acb98edc605d5713d1a98c7f7624d8efa09e4e6acab97197af1229956483fa4"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://api.github.com/repos/senseylabs/village/releases/assets/388968203",
+      url "https://api.github.com/repos/senseylabs/village/releases/assets/388979850",
           headers: ["Accept: application/octet-stream", "Authorization: token #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"]
-      sha256 "765d5675af1926a598039c22d2532fd91ec91fd537b0643a451a4c9bc7082f5f"
+      sha256 "c6c4e46c7fa00274fbaa10cbd3d6fa7f8f35a865934d436c2988b4d9418f14ef"
     end
   end
 
