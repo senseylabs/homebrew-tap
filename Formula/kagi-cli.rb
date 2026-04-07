@@ -6,18 +6,21 @@ class KagiCli < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/senseylabs/village/releases/download/v0.2.1/kagi-cli_0.2.1_darwin_arm64.tar.gz"
+      url "https://api.github.com/repos/senseylabs/village/releases/assets/391035682",
+          headers: ["Accept: application/octet-stream", "Authorization: token #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"]
       sha256 "6e4e972833ee0c49a4e1165c2ded3a81c4a7ee9027e6cc815cb7b79568800fb5"
     end
     on_intel do
-      url "https://github.com/senseylabs/village/releases/download/v0.2.1/kagi-cli_0.2.1_darwin_amd64.tar.gz"
+      url "https://api.github.com/repos/senseylabs/village/releases/assets/391035680",
+          headers: ["Accept: application/octet-stream", "Authorization: token #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"]
       sha256 "34ed7b9813cf5750eaac39924158e56708976c561ef8b0b798ac0782606c076f"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/senseylabs/village/releases/download/v0.2.1/kagi-cli_0.2.1_linux_amd64.tar.gz"
+      url "https://api.github.com/repos/senseylabs/village/releases/assets/391035685",
+          headers: ["Accept: application/octet-stream", "Authorization: token #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"]
       sha256 "4446775a19b05a60b42cd09cd0f27c96a75431d834ad2ef8f82a09cc9c113fa5"
     end
   end
