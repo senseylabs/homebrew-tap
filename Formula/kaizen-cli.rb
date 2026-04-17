@@ -5,21 +5,21 @@
 class KaizenCli < Formula
   desc "CLI tool for Kaizen board management"
   homepage "https://github.com/senseylabs/kaizen-cli"
-  version "0.3.1"
+  version "0.3.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.3.1/kaizen-cli_0.3.1_darwin_amd64.tar.gz"
-      sha256 "3e374630faa60f39750236147082a9f4a8a8a7dc97f0f2afc4a79d5b4d210d4b"
+      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.3.2/kaizen-cli_0.3.2_darwin_amd64.tar.gz"
+      sha256 "d21819fde38e56d2a3dee8f6f742b376714f227a4a5cdfc2bd9c115b4736ecbd"
 
       define_method(:install) do
         bin.install "kaizen"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.3.1/kaizen-cli_0.3.1_darwin_arm64.tar.gz"
-      sha256 "93df675efbb756e8cf737764e2cee455ee332382ff9b0c011d1d231c455867df"
+      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.3.2/kaizen-cli_0.3.2_darwin_arm64.tar.gz"
+      sha256 "f0c16ecdfc0291c3fd2f6f13e10950b9db7e37e25f7ca36cbbbfc675bef31784"
 
       define_method(:install) do
         bin.install "kaizen"
@@ -29,8 +29,8 @@ class KaizenCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.3.1/kaizen-cli_0.3.1_linux_amd64.tar.gz"
-      sha256 "830a4fc6354a11424800403d93f6e5459a42a54a1e507218842365711dbb3c3d"
+      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.3.2/kaizen-cli_0.3.2_linux_amd64.tar.gz"
+      sha256 "b84cf7401b680ba87ce4dc5cd37b1228d829d3e727baaf3541546c943f7297db"
       define_method(:install) do
         bin.install "kaizen"
       end
