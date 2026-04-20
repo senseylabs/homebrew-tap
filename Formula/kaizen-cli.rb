@@ -11,7 +11,7 @@ class KaizenCli < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.4.0/kaizen-cli_0.4.0_darwin_amd64.tar.gz"
-      sha256 "446d6036b62f62e45d1019cdbf1c81bc12818ca2bb8813276e57f7fdd65c757b"
+      sha256 "c1f128eea0c31e02fcc9711f6628baa1239d6e7a8e6c69f923282fd385eb5ec0"
 
       define_method(:install) do
         bin.install "kaizen"
@@ -19,7 +19,7 @@ class KaizenCli < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.4.0/kaizen-cli_0.4.0_darwin_arm64.tar.gz"
-      sha256 "362fcf4c036a6f28cb7e956d5af06643236a7ab22f8c3aebcb85532dedf2eaec"
+      sha256 "1d018828ca2ee1fca097fbf7ce12a4268139a4ffd553e4aa92f9827518dbf5f0"
 
       define_method(:install) do
         bin.install "kaizen"
@@ -30,7 +30,7 @@ class KaizenCli < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.4.0/kaizen-cli_0.4.0_linux_amd64.tar.gz"
-      sha256 "0218c3810ac11a6ff4193d9233ce63196c6f49a145e7cb693a63f5a6a8a9272b"
+      sha256 "8add2a4595c74d271533ae5956066fbe2418d83377a2515cc6a683e682f2f216"
       define_method(:install) do
         bin.install "kaizen"
       end
