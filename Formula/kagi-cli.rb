@@ -5,21 +5,21 @@
 class KagiCli < Formula
   desc "Kagi CLI — secrets management for Sensey"
   homepage "https://github.com/senseylabs/kagi-cli"
-  version "0.5.1"
+  version "0.6.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.5.1/kagi-cli_0.5.1_darwin_amd64.tar.gz"
-      sha256 "a8de78a1f0a71da30c320a1d6dc0324cf288b5fd3731141807d542468b61a38c"
+      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.6.0/kagi-cli_0.6.0_darwin_amd64.tar.gz"
+      sha256 "506f6bab23f7a64ac89fb69e690e8b93f3b237982f71d2296fbbf785053aa33a"
 
       define_method(:install) do
         bin.install "kagi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.5.1/kagi-cli_0.5.1_darwin_arm64.tar.gz"
-      sha256 "74003b497fcb350acb6757229c0ff3ee9ebddf05c137bfe88f9b4b29a781ce0c"
+      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.6.0/kagi-cli_0.6.0_darwin_arm64.tar.gz"
+      sha256 "a0946c064ce3b19fac9bfabd790b7b869a3ffb35b8c05eb8f2e5be0defb0dbb5"
 
       define_method(:install) do
         bin.install "kagi"
@@ -29,8 +29,8 @@ class KagiCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.5.1/kagi-cli_0.5.1_linux_amd64.tar.gz"
-      sha256 "4bfb3495fba9cff16c66c12a4135bf0540e3b51480a9ac779277f580a44c4660"
+      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.6.0/kagi-cli_0.6.0_linux_amd64.tar.gz"
+      sha256 "1a562df1df35e0a7906646098f2adecd5e791eee0f641c23d983d5e1d648d2a6"
       define_method(:install) do
         bin.install "kagi"
       end
