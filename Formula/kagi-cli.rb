@@ -5,21 +5,21 @@
 class KagiCli < Formula
   desc "Kagi CLI — secrets management for Sensey"
   homepage "https://github.com/senseylabs/kagi-cli"
-  version "0.17.0"
+  version "0.18.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.17.0/kagi-cli_0.17.0_darwin_amd64.tar.gz"
-      sha256 "05020960ea731054dcc799f05d74a667474ba07882420ea01f834ddad3286e05"
+      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.18.1/kagi-cli_0.18.1_darwin_amd64.tar.gz"
+      sha256 "8fa4fab38491f61bcb52d101f02e53993c30427ca09856256397f591230c3d47"
 
       define_method(:install) do
         bin.install "kagi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.17.0/kagi-cli_0.17.0_darwin_arm64.tar.gz"
-      sha256 "39b75acd91c8bec616c39638d699195935a88763609dd0ab5883aed2e3623d9a"
+      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.18.1/kagi-cli_0.18.1_darwin_arm64.tar.gz"
+      sha256 "91836c610d866a587de18f308f45c0834f00184545d5152466e2c2632c610833"
 
       define_method(:install) do
         bin.install "kagi"
@@ -29,8 +29,15 @@ class KagiCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.17.0/kagi-cli_0.17.0_linux_amd64.tar.gz"
-      sha256 "b949231646245697aa8d2f23e9acc433fb4567366734053a655ee70f6335a790"
+      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.18.1/kagi-cli_0.18.1_linux_amd64.tar.gz"
+      sha256 "b06dd7c4c6f4f4156f4f18e4e448db1cf8425f4c2a7d8af35637fdda14dd5be1"
+      define_method(:install) do
+        bin.install "kagi"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/senseylabs/kagi-cli/releases/download/v0.18.1/kagi-cli_0.18.1_linux_arm64.tar.gz"
+      sha256 "79204def7ea13adc798eea4a028b272f914960899db7ab3621258bf45829d142"
       define_method(:install) do
         bin.install "kagi"
       end
