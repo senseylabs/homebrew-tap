@@ -5,48 +5,53 @@
 class Devstack < Formula
   desc "Runs a worktree's development stack: services, apps and tasks"
   homepage "https://github.com/senseylabs/devstack"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   depends_on "senseylabs/tap/kagi-cli"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/senseylabs/devstack/releases/download/v0.1.0/devstack_0.1.0_darwin_amd64.tar.gz"
-      sha256 "e028ccf9e6fcc0e29dc120c620a0872c2217b96d3e4337973d9c66ad0d9ffcbe"
+      url "https://github.com/senseylabs/devstack/releases/download/v0.1.1/devstack_0.1.1_darwin_amd64.tar.gz"
+      sha256 "e4f5e18db4f3d00ee5d32d24170f0fc3ed2a59e2576de3fc7f28fd2e69e3a81a"
 
       define_method(:install) do
         bin.install "devstack"
+        bin.install_symlink "devstack" => "ds"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/senseylabs/devstack/releases/download/v0.1.0/devstack_0.1.0_darwin_arm64.tar.gz"
-      sha256 "3485f2491906b254ffa5158c4cef6058251a33c7ae13ada5103e0ae81ee97645"
+      url "https://github.com/senseylabs/devstack/releases/download/v0.1.1/devstack_0.1.1_darwin_arm64.tar.gz"
+      sha256 "a7da78fe2bf5ce89027deb8a875bcf6b590a450d50719970a1309e336c5017f1"
 
       define_method(:install) do
         bin.install "devstack"
+        bin.install_symlink "devstack" => "ds"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/senseylabs/devstack/releases/download/v0.1.0/devstack_0.1.0_linux_amd64.tar.gz"
-      sha256 "414aeddc1a3bc3920709a085112eb76fdd5f833db2299ed713eed0a8947b0de3"
+      url "https://github.com/senseylabs/devstack/releases/download/v0.1.1/devstack_0.1.1_linux_amd64.tar.gz"
+      sha256 "1c1b3802139e1472c543d31c01f1e56137a86aa771ef577ac614ace3a3cee714"
       define_method(:install) do
         bin.install "devstack"
+        bin.install_symlink "devstack" => "ds"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/senseylabs/devstack/releases/download/v0.1.0/devstack_0.1.0_linux_arm64.tar.gz"
-      sha256 "2f525b88f4467dcb1ab6681ee3884d49f5dcbe6b197daff10e39a45c2208df65"
+      url "https://github.com/senseylabs/devstack/releases/download/v0.1.1/devstack_0.1.1_linux_arm64.tar.gz"
+      sha256 "b3e86fa00503bdc9815c6e8b6cdf20283217a07b652c7c8aca8b6f443a682ddc"
       define_method(:install) do
         bin.install "devstack"
+        bin.install_symlink "devstack" => "ds"
       end
     end
   end
 
   test do
     system "#{bin}/devstack", "version"
+    system "#{bin}/ds", "version"
   end
 end
