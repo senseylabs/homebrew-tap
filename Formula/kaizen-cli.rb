@@ -5,21 +5,21 @@
 class KaizenCli < Formula
   desc "CLI tool for Kaizen board management"
   homepage "https://github.com/senseylabs/kaizen-cli"
-  version "0.7.0"
+  version "0.8.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.7.0/kaizen-cli_0.7.0_darwin_amd64.tar.gz"
-      sha256 "ee32497da16508c25f18da4c15c7fc8253d3525c53edd9a1d51b5fcaf1815d06"
+      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.8.0/kaizen-cli_0.8.0_darwin_amd64.tar.gz"
+      sha256 "7bb1a18d041265c02f973fa90990c77450dc0cc360cc384222e658344577487f"
 
       define_method(:install) do
         bin.install "kaizen"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.7.0/kaizen-cli_0.7.0_darwin_arm64.tar.gz"
-      sha256 "6695a7959b290c376c47b85f078aea6f40ac4dd0ae79c98faf7fe6f09121c07d"
+      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.8.0/kaizen-cli_0.8.0_darwin_arm64.tar.gz"
+      sha256 "70128c064dbb8d7784d6e6edbc2f5957cc0453f0f59f12703bb28a84637590e2"
 
       define_method(:install) do
         bin.install "kaizen"
@@ -29,8 +29,15 @@ class KaizenCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.7.0/kaizen-cli_0.7.0_linux_amd64.tar.gz"
-      sha256 "2ea74ad7d411251e9cd21fae8c9ace8622f57514b4d3d22b8f019db61e526f49"
+      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.8.0/kaizen-cli_0.8.0_linux_amd64.tar.gz"
+      sha256 "ec633979c85658070ab8aa0a4094b23a6e39b955992d0650d7616b935f9358bc"
+      define_method(:install) do
+        bin.install "kaizen"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/senseylabs/kaizen-cli/releases/download/v0.8.0/kaizen-cli_0.8.0_linux_arm64.tar.gz"
+      sha256 "2a6575736782613546c5542b143bdfdd91780ad99849270941218edadb3fd99a"
       define_method(:install) do
         bin.install "kaizen"
       end
