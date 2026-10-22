@@ -16,8 +16,8 @@ cask "vantage" do
   # ---------------------------------------------------------------------------
   # BUMP THESE ON EACH RELEASE (the release workflow does this automatically)
   # ---------------------------------------------------------------------------
-  version "0.5.0"
-  sha256 "e5a09032aeb3dfc1547bb26f8454714dc38a5948e84a6dbb67e83ec54ce6902e"
+  version "0.6.0"
+  sha256 "785414ba2c8ad04ab75348cc626b1b722f21f4e737b1e71faa3e1bfbf7d5b449"
 
   #           ^^^  run: shasum -a 256 Vantage-#{version}.zip
   # ---------------------------------------------------------------------------
