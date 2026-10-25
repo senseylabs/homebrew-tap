@@ -16,8 +16,8 @@ cask "vantage" do
   # ---------------------------------------------------------------------------
   # BUMP THESE ON EACH RELEASE (the release workflow does this automatically)
   # ---------------------------------------------------------------------------
-  version "0.6.2"
-  sha256 "155c0b5929d4d6c5f0b01cf2bc83564976830711fb44e18d23361fad5958154d"
+  version "0.7.0"
+  sha256 "cddcda6514c87fab70fd7d79d83b26f06366935adc88669bd3ab9fb75152a8f0"
 
   #           ^^^  run: shasum -a 256 Vantage-#{version}.zip
   # ---------------------------------------------------------------------------
@@ -53,13 +53,19 @@ cask "vantage" do
   # zap removes user data and preferences that Homebrew won't touch otherwise,
   # including the file-sink log under ~/Library/Logs/Vantage.
   # -------------------------------------------------------------------------
-  uninstall quit: "com.sensey.vantage"
+  # The nested link router (Vantage Links.app) stays resident after a link; quit
+  # it too, or an upgrade leaves the old one routing links.
+  uninstall quit: [
+    "com.sensey.vantage",
+    "com.sensey.vantage.links",
+  ]
 
   zap trash: [
     "~/Library/Application Support/Vantage",
     "~/Library/Caches/com.sensey.vantage",
     "~/Library/Logs/Vantage",
     "~/Library/Preferences/com.sensey.vantage.plist",
+    "~/Library/Preferences/com.sensey.vantage.links.plist",
     "~/Library/Saved Application State/com.sensey.vantage.savedState",
   ]
 
